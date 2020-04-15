@@ -78,9 +78,9 @@ def Album():
     """Renders the about page."""
     return render_template(
         'PictureAlbum.html',
-        title='Pictures',
+        title='Presidents Photo Album',
         year=datetime.now().year,
-        message='Welcome to my picture album'
+        message='Welcome to my photo album'
     )
 
 
@@ -154,6 +154,8 @@ def Login():
     form = LoginFormStructure(request.form)
 
     if (request.method == 'POST' and form.validate()):
+        print(form.username.data)
+        print(form.password.data)
         if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
             flash('Login approved!')
             #return redirect('<were to go if login is good!')
@@ -163,7 +165,7 @@ def Login():
     return render_template(
         'login.html', 
         form=form, 
-        title='Login to data analysis',
+        title='Login To Data Analysis',
         year=datetime.now().year,
         repository_name='Pandas',
         )
@@ -175,26 +177,74 @@ def DataModel():
     """Renders the contact page."""
     return render_template(
         'DataModel.html',
-        title='This is my Data Model page abou UFO',
+        title='This is my data model page',
         year=datetime.now().year,
-        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+        message='In this page you will be able to see my data sets'
     )
 
 
 @app.route('/DataSet1')
 def DataSet1():
 
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\capitals.csv'))
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\BL.csv'))
     raw_data_table = df.to_html(classes = 'table table-hover')
 
 
     """Renders the contact page."""
     return render_template(
         'DataSet1.html',
-        title='This is Data Set 1 page',
+        title='This is Data Set Bill Clinton page',
         raw_data_table = raw_data_table,
         year=datetime.now().year,
-        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+        message='In this page we will display the datasets'
+    )
+
+@app.route('/DataSet2')
+def DataSet2():
+
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\BA.csv'))
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+
+    """Renders the contact page."""
+    return render_template(
+        'DataSet2.html',
+        title='This is Data Set Barack Obama page',
+        raw_data_table = raw_data_table,
+        year=datetime.now().year,
+        message='In this page we will display the datasets'
+    )
+
+@app.route('/DataSet3')
+def DataSet3():
+
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\GB.csv'))
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+
+    """Renders the contact page."""
+    return render_template(
+        'DataSet3.html',
+        title='This is Data Set George Bush page',
+        raw_data_table = raw_data_table,
+        year=datetime.now().year,
+        message='In this page we will display the datasets'
+    )
+
+@app.route('/DataSet4')
+def DataSet4():
+
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\DT.csv'))
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+
+    """Renders the contact page."""
+    return render_template(
+        'DataSet4.html',
+        title='This is Data Set Donald Trump page',
+        raw_data_table = raw_data_table,
+        year=datetime.now().year,
+        message='In this page we will display the datasets'
     )
 
 

@@ -51,8 +51,11 @@
     <Folder Include="DemoFormProject\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DemoFormProject\static\Data\BL.csv" />
+    <Content Include="DemoFormProject\static\Data\BA.csv" />
+    <Content Include="DemoFormProject\static\Data\GB.csv" />
+    <Content Include="DemoFormProject\static\Data\DT.csv" />
     <Content Include="DemoFormProject\static\Data\users.csv" />
-    <Content Include="DemoFormProject\static\Data\capitals.csv" />
     <Content Include="DemoFormProject\static\Pics\pic1.jpg" />
     <Content Include="DemoFormProject\templates\DataModel.html" />
     <Content Include="DemoFormProject\templates\DataSet1.html" />
@@ -60,6 +63,9 @@
     <Content Include="DemoFormProject\templates\login.html" />
     <Content Include="DemoFormProject\templates\PictureAlbum.html" />
     <Content Include="DemoFormProject\templates\query.html" />
+    <Content Include="DemoFormProject\templates\DataSet2.html" />
+    <Content Include="DemoFormProject\templates\DataSet3.html" />
+    <Content Include="DemoFormProject\templates\DataSet4.html" />
     <Content Include="requirements.txt" />
     <Content Include="DemoFormProject\static\content\bootstrap.css" />
     <Content Include="DemoFormProject\static\content\bootstrap.min.css" />
